@@ -593,7 +593,11 @@
   </div>
 </footer> -->
 
-<script>
+
+
+
+
+<!-- <script>
   (function () {
     const SCALE = 2.5;  // try 1.5–2.5; 4 is usually too much :)
 
@@ -615,6 +619,59 @@
 
       container.addEventListener('mouseleave', () => {
         img.style.transform = 'scale(1) translate(0, 0)';
+      });
+    });
+  })();
+</script> -->
+
+
+<script>
+  (function () {
+    const SCALE = 2.5;  // you can bump to 2.5 if you like
+    const isTouchDevice =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.innerWidth < 768;   // treat small screens as mobile
+
+    document.querySelectorAll('.zoom-pan-container').forEach(container => {
+      const img = container.querySelector('.zoom-pan-image');
+      if (!img) return;
+
+      // On phones / tablets: no zoom-pan, just ensure image is reset.
+      if (isTouchDevice) {
+        img.style.transform = 'scale(1) translate(0, 0)';
+        return;
+      }
+
+      // Desktop: smooth hover-to-pan
+      let frameRequested = false;
+      let lastEvent = null;
+
+      function update() {
+        if (!lastEvent) return;
+        const rect = container.getBoundingClientRect();
+        const x = (lastEvent.clientX - rect.left) / rect.width - 0.5;  // -0.5..0.5
+        const y = (lastEvent.clientY - rect.top) / rect.height - 0.5;
+
+        const maxShift = (SCALE - 1) * 50; // percent
+        const tx = -x * maxShift;
+        const ty = -y * maxShift;
+
+        img.style.transform = `scale(${SCALE}) translate(${tx}%, ${ty}%)`;
+        frameRequested = false;
+      }
+
+      container.addEventListener('mousemove', (e) => {
+        lastEvent = e;
+        if (!frameRequested) {
+          frameRequested = true;
+          requestAnimationFrame(update);
+        }
+      });
+
+      container.addEventListener('mouseleave', () => {
+        img.style.transform = 'scale(1) translate(0, 0)';
+        lastEvent = null;
       });
     });
   })();
