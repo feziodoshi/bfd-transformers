@@ -1,1 +1,622 @@
-<html><html><head><meta charset='utf-8'><title>BFD Transformers</title></head><body><h1>BFD Transformers Website</h1></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="Research Project Page"/>
+  <meta property="og:description" content="Improved text-image alignment via attention control."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>BFD Project Page</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>1
+
+  
+
+
+
+<style>
+  .zoom-pan-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zoom-pan-image {
+    transition: transform 0.25s ease-out;
+    transform-origin: center center;
+    will-change: transform;
+  }
+</style>
+
+<style>
+  .affiliation-logos {
+    margin-bottom: 1.5rem;
+  }
+  .affiliation-logos img {
+    max-height: 70px;
+    margin: 0 1rem;
+    vertical-align: middle;
+  }
+  @media (max-width: 768px) {
+    .affiliation-logos img {
+      max-height: 50px;
+      margin: 0 0.5rem;
+    }
+  }
+</style>
+
+<style>
+  .triangle-pair {
+  margin-top: 1.5rem;
+}
+
+.triangle-card {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.triangle-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* main (simple) view is just the base image */
+.triangle-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* detailed view fades in on hover */
+.triangle-detail {
+  position: absolute;
+  inset: 0;              /* top/right/bottom/left: 0 */
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
+  z-index: 2;
+}
+
+.triangle-card:hover .triangle-detail {
+  opacity: 1;
+}
+</style>
+
+
+</head>
+<body>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Bi-orthogonal Factor Decomposition for Vision Transformers</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block" style="margin-right: 1em;">
+                <a href="https://www.fenildoshi.com/" target="_blank">Fenil R. Doshi</a>
+              </span>
+              <span class="author-block" style="margin-right: 1em;">
+                <a href="https://thomasfel.fr/" target="_blank">Thomas Fel</a>
+              </span>
+              <span class="author-block" style="margin-right: 1em;">
+                <a href="https://konklab.fas.harvard.edu/" target="_blank">Talia Konkle</a>
+              </span>
+              <span class="author-block" style="margin-right: 1em;">
+                <a href="https://visionlab.harvard.edu/george/" target="_blank">George A. Alvarez</a>
+              </span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Harvard University</span><br>
+                    <span class="author-block">Kempner Institute for the Study of Natural and Artificial Intelligence</span>
+                  </div>
+
+                  <!-- <div class="affiliation-logos">
+                    <img src="static/images_new/kempner.png"
+                         alt="Kempner Institute logo">
+                    <img src="static/images_new/harvard.png"
+                         alt="Harvard University logo">
+                  </div> -->
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <!-- <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/t-sam-diffusion/code" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2411.15236" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Single full-width panel for one figure -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <div class="item">
+        <!-- <img src="static/images_new/website_teaser.png" style="max-width:100%; height:auto;" alt="Website Teaser"/> -->
+        <img src="static/images_new/qualitative_interaction_viz.png" style="max-width:100%; height:auto;" alt="Website Teaser"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Self-attention is the central computational primitive of Vision Transformers,
+            yet we lack a principled understanding of what information attention mechanisms
+            exchange between tokens. Attention maps describe where weight mass concentrates;
+            they do not reveal whether queries and keys trade position, content, or both. We introduce Bi-orthogonal Factor Decomposition (BFD), a two-stage analytical framework: 
+            first, an ANOVA-based decomposition statistically disentangles token activations into orthogonal positional and content factors; second, SVD of the query-key interaction matrix
+            QK<sup>T</sup> exposes bi-orthogonal modes that reveal how these factors mediate communication. After validating proper isolation of position and content, we apply BFD to
+            state-of-the-art vision models and uncover three phenomena:
+            <!-- <ol type="i" style="margin-left: 1em;"> -->
+            <ol type="i" style="margin-left: 1em; font-size: 1.25em;">
+              <li>
+                <strong>Attention operates primarily through content.</strong>
+                Content-content interactions dominate attention energy, followed by content-position coupling.
+                DINOv2 allocates more energy to content-position than supervised models and distributes computation across a richer mode spectrum.
+              </li>
+              <li>
+                <strong>Attention mechanisms exhibit specialization:</strong>
+                heads differentiate into content-content, content-position, and position-position operators, while
+                singular modes within heads show analogous specialization.
+              </li>
+              <li>
+                <strong>DINOv2's superior holistic shape processing</strong>
+                emerges from intermediate layers that simultaneously preserve positional structure while
+                contextually enriching semantic content.
+              </li>
+            </ol>
+          </p>
+          <p>Overall, BFD exposes how tokens interact through attention and which informational factors –
+            positional or semantic – mediate their communication, yielding practical insights
+            into vision transformer mechanisms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Method -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+      <div class="item">
+        <h2 class="title is-3">Method</h2>
+
+        <!-- Main method schematic -->
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <img src="static/images_new/toy_schema_v3.png"
+                width="100%" height="auto"
+                alt="Schematic of Bi-orthogonal Factor Decomposition into position and content components." />
+        </div>
+        <div style="margin-bottom: 2rem;"></div>
+        <p>
+          <strong>Bi-orthogonal Factor Decomposition (BFD)</strong> splits each ViT token activation into 
+          three orthogonal components: a global mean term, a <em>positional</em> component capturing 
+          where the token is, and a <em>content</em> component capturing what it represents. 
+          A token’s activation is approximated as the sum of these three factors, each expressed in its
+          own basis, giving a clean view of geometry and semantics inside the same representation.
+          We then project each attention head’s query–key interaction matrix onto these
+          subspaces, decomposing it into different types of position- and content-driven 
+          interactions.
+        </p>
+        
+        <h4 class="title is-4" style="margin-top: 2rem;">Factorization Cleanly Separates Position from Content</h4>
+        <p>
+          We validate BFD by training linear probes on positional, content, and recomposed features to confirm that each subspace captures the specific information it is intended to represent.
+        </p>
+
+        <!-- Linear probing / sanity check figure -->
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <img src="static/images_new/sanity_check_v0.png"
+                width="80%" height="auto"
+                alt="Layer-wise linear probing accuracy for position prediction using decomposed features." />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Attention budget is allocated to content-driven interactions -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+      <div class="item">
+
+        <h2 class="title is-3">Attention budget is allocated more towards content-driven interactions</h2>
+
+        <p>
+          BFD decomposes each layer’s attention into factor pairs and shows that most attention
+          energy flows through <em>content–content</em> and <em>content–position</em> interactions,
+          especially in deeper layers. DINOv2 dedicates more energy to content–position
+          coupling than the supervised ViT, indicating stronger localization-aware semantic
+          integration rather than purely positional scaffolding.
+        </p>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <img src="static/images_new/sedimentation_plot_bg.png"
+               width="80%" height="auto"
+               alt="Layer-wise stacked attention energy for different interaction types in ViT and DINOv2, showing content-driven interactions dominating the budget." />
+        </div>
+
+        <p>
+          <strong>Rich interaction motifs across modes.</strong>
+          Zooming in on individual modes reveals structured, layer-specific patterns within each factor.
+          DINOv2, in particular, shows diverse motifs in the dominant content-based components.
+        </p>
+  
+        <!-- Motif carousel -->
+        <div id="infoflow-carousel" class="carousel results-carousel" style="margin-top: 1.5rem;">
+  
+          <div class="item">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/detail_energy_per_factor_per_modes_grouped_ViT.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+            </div>
+            <p class="subtitle has-text-centered">
+              Supervised ViT: interaction energy across factors and modes <br>.
+            </p>
+          </div>
+  
+          <div class="item">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/detail_energy_per_factor_per_modes_grouped_DinoV2.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+            </div>
+            <p class="subtitle has-text-centered">
+              DINOv2: richer, more distributed energy in content-driven components <br>.
+            </p>
+          </div>
+  
+        </div>
+        <!-- End motif carousel -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Mode specializations across factors -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+
+      <h2 class="title is-3">Mode specializations across factors</h2>
+      <p>
+        Triangular plots summarize how modes distribute their energy over layer-, position-, 
+        and content-driven components for ViT and DINOv2.
+      </p>
+
+      <!-- TOP PANEL: aggregated over all layers (overlay on hover) -->
+      <h3 class="title is-4" style="margin-top: 1.5rem;">Aggregated over layers</h3>
+      <p>
+        Aggregating modes across depth reveals that supervised ViT balances layer and position
+        contributions, whereas DINOv2 shifts more strongly toward content-driven computation.
+      </p>
+
+      <div class="triangle-card" style="margin-top: 1rem;">
+        <!-- Simple / summary view -->
+        <img src="static/images_new/mode_triangle_main.png"
+             class="triangle-main"
+             alt="Summary ternary plot of mode specializations aggregated over layers." />
+        <!-- Detailed density view on hover -->
+        <img src="static/images_new/mode_triangle_main_density.png"
+             class="triangle-detail"
+             alt="Density ternary plot of mode specializations aggregated over layers." />
+      </div>
+
+      <!-- BOTTOM PANEL: per-layer view with zoom + hover pan -->
+      <h3 class="title is-4" style="margin-top: 2.5rem;">Per-layer view</h3>
+      <p>
+        A per-layer view exposes how these specializations evolve with depth for both models.
+        Hover to zoom and explore fine-grained structure across layers.
+      </p>
+
+      <div class="zoom-pan-container" style="margin-top: 1rem;">
+        <img src="static/images_new/mode_triangle_full_density.png"
+             class="zoom-pan-image"
+             alt="Per-layer ternary plots of mode specializations for ViT and DINOv2." />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small is-light">
+  
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">The problem with text embeddings</h2>
+      <p>Our observations are summarized in the following plots. We show that text embeddings fail to encode the syntactic relationships between words. In contrast, the self-attention matrix of the text encoder reflects those relationships.</p>
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/self_attn_val_histogram_objects.png" class="carousel-image" alt="MY ALT TEXT"/>
+            <p class="subtitle has-text-centered">
+              The distributions of  text self-attention value  for bound tokens  vs. unbound tokens.
+              The separate  distributions indicate text self-attention maps can indeed represent the syntactic relationships.
+            </p>
+        </div>
+        <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/text_emb_histogram_objects.png" class="carousel-image" alt="MY ALT TEXT"/>
+            <p class="subtitle has-text-centered">
+              The distributions of text embedding similarity between i) Bound tokens, and ii) Unbound tokens. The distributions show no discernible difference, indicating text embeddings do not effectively represent the syntactic relationships.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+
+<section class="hero is-small">
+  
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">Performance</h2>
+      <p>Our method outperforms baseline methods as shown below.</p>
+      <div id="performance-carousel" class="carousel performance-carousel">
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/tifa_scores_comparison.png" class="carousel-image" alt="MY ALT TEXT"/>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/table1.png" class="carousel-image" style="transform: scale(0.55);" alt="MY ALT TEXT"/>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/table2.png" class="carousel-image" alt="MY ALT TEXT"/>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container"> -->
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">Performance</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="item"> -->
+            <!-- Your image here -->
+            <!-- <img src="static/images/tifa_scores_comparison.png
+" alt="MY ALT TEXT"/>
+            <h2 class="subtitle has-text-centered">
+              Fourth image description.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/images/figure_collect_fixed.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="hero is-light" id="BibTeX">
+    <div class = "hero-body">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{kim2024text,
+        title={Text Embedding is Not All You Need: Attention Control for Text-to-Image Semantic Alignment with Text Self-Attention Maps},
+        author={Kim, Jeeyung and Esmaeili, Erfan and Qiu, Qiang},
+        journal={arXiv preprint arXiv:2411.15236},
+        year={2024}
+      }</code></pre>
+    </div>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p style = "font-size: 13px" >
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+<script>
+  (function () {
+    const SCALE = 2.5;  // try 1.5–2.5; 4 is usually too much :)
+
+    document.querySelectorAll('.zoom-pan-container').forEach(container => {
+      const img = container.querySelector('.zoom-pan-image');
+      if (!img) return;
+
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5..0.5
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        const maxShift = (SCALE - 1) * 50; // percent
+        const tx = -x * maxShift;
+        const ty = -y * maxShift;
+
+        img.style.transform = `scale(${SCALE}) translate(${tx}%, ${ty}%)`;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        img.style.transform = 'scale(1) translate(0, 0)';
+      });
+    });
+  })();
+</script>
+  
