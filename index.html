@@ -42,7 +42,7 @@
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>1
+  <script src="static/js/index.js"></script>
 
   
 
@@ -181,18 +181,18 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/t-sam-diffusion/code" target="_blank"
+                    <a href="https://www.fenildoshi.com/bfd-transformers/" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (coming soon)</span>
                   </a>
                 </span>
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2411.15236" target="_blank"
+                  <a href="https://arxiv.org/abs/2507.00493" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -324,9 +324,9 @@
         <p>
           BFD decomposes each layer’s attention into factor pairs and shows that most attention
           energy flows through <em>content–content</em> and <em>content–position</em> interactions,
-          especially in deeper layers. DINOv2 dedicates more energy to content–position
+          especially in deeper layers. Interestingly, DINOv2 dedicates more energy to content–position
           coupling than the supervised ViT, indicating stronger localization-aware semantic
-          integration rather than purely positional scaffolding.
+          integration.
         </p>
 
         <div style="text-align: center; margin-top: 1.5rem;">
@@ -336,9 +336,9 @@
         </div>
 
         <p>
-          <strong>Rich interaction motifs across modes.</strong>
-          Zooming in on individual modes reveals structured, layer-specific patterns within each factor.
-          DINOv2, in particular, shows diverse motifs in the dominant content-based components.
+          <strong>Rich content-driven interaction motifs across the modes in DINOv2.</strong>
+          <strong>At a finer resolution, we observe that the content-driven energy in DINOv2 is distributed broadly across many modes rather than concentrated in a few dominant ones.</strong>
+          In contrast, the supervised ViT not only allocates less overall energy to content-driven interactions, but also the energy is concentrated in a few dominant modes.
         </p>
   
         <!-- Motif carousel -->
@@ -381,24 +381,27 @@
   <div class="hero-body">
     <div class="container is-max-desktop content">
 
-      <h2 class="title is-3">Mode specializations across factors</h2>
+      <h2 class="title is-3">Functional specialization of modes</h2>
       <p>
-        Triangular plots summarize how modes distribute their energy over layer-, position-, 
-        and content-driven components for ViT and DINOv2.
+        Measuring the relative contribution of content-, poition-, and layer-driven interactions reveals that modes implement specialized interactions.
       </p>
 
       <!-- TOP PANEL: aggregated over all layers (overlay on hover) -->
       <h3 class="title is-4" style="margin-top: 1.5rem;">Aggregated over layers</h3>
       <p>
-        Aggregating modes across depth reveals that supervised ViT balances layer and position
-        contributions, whereas DINOv2 shifts more strongly toward content-driven computation.
+        Modes cluster near vertices and edges instead of dispersing uniformly across the simplex.
       </p>
+
+      
 
       <div class="triangle-card" style="margin-top: 1rem;">
         <!-- Simple / summary view -->
         <img src="static/images_new/mode_triangle_main.png"
              class="triangle-main"
              alt="Summary ternary plot of mode specializations aggregated over layers." />
+             <p class="subtitle has-text-centered">
+              The vertices correspond to layer-, position-, and content-dominated operators, and points along edges reflect mixed operators (e.g., content–position). Hover over the image to see the density distribution. <br>.
+            </p>
         <!-- Detailed density view on hover -->
         <img src="static/images_new/mode_triangle_main_density.png"
              class="triangle-detail"
@@ -408,8 +411,7 @@
       <!-- BOTTOM PANEL: per-layer view with zoom + hover pan -->
       <h3 class="title is-4" style="margin-top: 2.5rem;">Per-layer view</h3>
       <p>
-        A per-layer view exposes how these specializations evolve with depth for both models.
-        Hover to zoom and explore fine-grained structure across layers.
+        The per-layer view of mode density distributions for ViT (top) and DINOv2 (bottom).
       </p>
 
       <div class="zoom-pan-container" style="margin-top: 1rem;">
@@ -423,40 +425,79 @@
 </section>
 
 
-
-<!-- Image carousel -->
-<section class="hero is-small is-light">
-  
+<!-- Dual preservation of position and content -->
+<section class="hero is-light">
   <div class="hero-body">
     <div class="container is-max-desktop content">
-      <h2 class="title is-3">The problem with text embeddings</h2>
-      <p>Our observations are summarized in the following plots. We show that text embeddings fail to encode the syntactic relationships between words. In contrast, the self-attention matrix of the text encoder reflects those relationships.</p>
-      <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
 
-        <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/self_attn_val_histogram_objects.png" class="carousel-image" alt="MY ALT TEXT"/>
-            <p class="subtitle has-text-centered">
-              The distributions of  text self-attention value  for bound tokens  vs. unbound tokens.
-              The separate  distributions indicate text self-attention maps can indeed represent the syntactic relationships.
-            </p>
+        <h2 class="title is-3">Dual preservation of position and content in DINOv2 explains its superior holistic shape capacity</h2>
+
+        <!-- Holistic processing (full width) -->
+        <!-- <h3 class="title is-4" style="margin-top: 1.5rem;">Holistic processing</h3> -->
+        <p>
+          Holistic processing requires the visual system to look beyond local cues by stitching
+          the local features into a global percept. For example, in a puzzle-piece visual anagram, the same pieces can form different objects, so
+          the processor must encode content-driven interactions while remaining spatially
+          anchored&mdash;exactly the pattern that BFD reveals in DINOv2, which supposedly shows superior holistic shape capacity with these anagrams.
+        </p>
+        <div class="has-text-centered" style="margin-top: 1rem;">
+          <img src="static/images_new/twitter_card_0.png"
+               style="max-width:100%; height:auto;"
+               alt="Puzzle-piece visual anagram where the same local pieces can form a wolf or an elephant." />
         </div>
-        <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/text_emb_histogram_objects.png" class="carousel-image" alt="MY ALT TEXT"/>
-            <p class="subtitle has-text-centered">
-              The distributions of text embedding similarity between i) Bound tokens, and ii) Unbound tokens. The distributions show no discernible difference, indicating text embeddings do not effectively represent the syntactic relationships.
-            </p>
+
+        <!-- Isolated positional code (full width, with zoom hover) -->
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Isolated positional code</h3>
+        <p>
+          In the isolated positional subspace, DINOv2 preserves a smooth, grid-like manifold
+          across depth, whereas the supervised ViT rapidly collapses its spatial structure early on.
+        </p>
+        <div class="zoom-pan-container" style="margin-top: 1rem;">
+          <img src="static/images_new/position_pca_main.png"
+               class="zoom-pan-image"
+               style="max-width:100%; height:auto;"
+               alt="3D positional manifolds across layers for ViT and DINOv2." />
         </div>
+
+        
+      <!-- Isolated content code -->
+      <div id="isolated-content-section">
+        <h3 class="title is-4"
+            style="margin-top: 2.5rem; margin-bottom: 0.5rem;">
+          Isolated content code
+        </h3>
+
+        <div class="columns is-vcentered" style="margin-top: 0;">
+          <!-- Left: text -->
+          <div class="column">
+            <p>
+              Content similarity matrices show that in the supervised ViT, content components stay
+              highly similar across layers—an “eye” unit mostly becomes a slightly better eye
+              detector. In DINOv2, the content code changes substantially from block to block, as
+              local parts are re-encoded in terms of larger configurations (e.g., an “eye in a
+              face”), consistent with contextual enrichment rather than simple local refinement.
+            </p>
+          </div>
+
+          <!-- Right: figure -->
+          <div class="column has-text-centered">
+            <img src="static/images_new/similarity_content_vs_activations_v1.png"
+                style="max-width:100%; height:auto;"
+                alt="Layer-by-layer similarity matrices comparing activations and content components for ViT and DINOv2." />
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End image carousel -->
 
 
 
-<section class="hero is-small">
+
+
+<!-- <section class="hero is-small">
   
   <div class="hero-body">
     <div class="container is-max-desktop content">
@@ -464,22 +505,19 @@
       <p>Our method outperforms baseline methods as shown below.</p>
       <div id="performance-carousel" class="carousel performance-carousel">
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/tifa_scores_comparison.png" class="carousel-image" alt="MY ALT TEXT"/>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/table1.png" class="carousel-image" style="transform: scale(0.55);" alt="MY ALT TEXT"/>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/table2.png" class="carousel-image" alt="MY ALT TEXT"/>
       </div>
 
   </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 <!-- Youtube video -->
@@ -561,16 +599,21 @@
 
 
 <!--BibTex citation -->
-  <section class="hero is-light" id="BibTeX">
+  <section class="hero" id="BibTeX">
     <div class = "hero-body">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{kim2024text,
-        title={Text Embedding is Not All You Need: Attention Control for Text-to-Image Semantic Alignment with Text Self-Attention Maps},
-        author={Kim, Jeeyung and Esmaeili, Erfan and Qiu, Qiang},
-        journal={arXiv preprint arXiv:2411.15236},
-        year={2024}
-      }</code></pre>
+      <pre><code>
+        @misc{doshi2025visualanagramsrevealhidden,
+          title={Visual Anagrams Reveal Hidden Differences in Holistic Shape Processing Across Vision Models}, 
+          author={Fenil R. Doshi and Thomas Fel and Talia Konkle and George Alvarez},
+          year={2025},
+          eprint={2507.00493},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV},
+          url={https://arxiv.org/abs/2507.00493}, 
+    }
+      </code></pre>
     </div>
   </div>
 </section>
