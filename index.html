@@ -305,7 +305,9 @@
         
         <h4 class="title is-4" style="margin-top: 2rem;">Factorization Cleanly Separates Position from Content</h4>
         <p>
-          We validate BFD by training linear probes on positional, content, and recomposed features to confirm that each subspace captures the specific information it is intended to represent.
+          We validate BFD by testing whether positional information can still be decoded after removing the positional component. 
+          Linear probes easily recover token position from the raw token activations, confirming that the transformer stores positional information. 
+          However, the probes fail completely on the content residual extracted by BFD.
         </p>
 
         <!-- Linear probing / sanity check figure -->
