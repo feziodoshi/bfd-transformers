@@ -211,7 +211,7 @@
                 </span>
 
                 <!-- Circuit Tracing -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://feziodoshi.github.io/factor_flow_viz/dashboard/dinov2_vitb14_reg_lc/network_dashboard_backward/" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -219,10 +219,10 @@
                     </span>
                     <span> DINOv2 QK-OV Circuits (Beta)</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- Circuit Tracing -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://feziodoshi.github.io/factor_flow_viz/dashboard/vit_base_patch16_224_augreg_in1k/network_dashboard_backward" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -230,7 +230,7 @@
                     </span>
                     <span> ViT QK-OV Circuits (Beta)</span>
                   </a>
-                </span>
+                </span> -->
 
               </div>
             </div>
@@ -364,6 +364,9 @@
                class="zoom-pan-image"
                style="max-width:100%; height:auto;"
                alt="Projections of query/key singular vectors onto content or positional factors." />
+               <span style="opacity: 0.45; font-size: 0.85em;">
+                <i class="fas fa-search-plus"></i> Hover to zoom
+              </span>
         </div>
 
       </div>
@@ -411,7 +414,7 @@
                    alt="..." />
             </div>
             <p class="subtitle has-text-centered">
-              Supervised ViT: interaction energy across factors and modes <br>.
+              Supervised ViT: interaction energy across factors and modes. <strong>Hover to zoom.</strong> <br>&nbsp;
             </p>
           </div>
   
@@ -422,7 +425,7 @@
                    alt="..." />
             </div>
             <p class="subtitle has-text-centered">
-              DINOv2: richer, more distributed energy in content-driven components <br>.
+              DINOv2: richer, more distributed energy in content-driven components. <strong>Hover to zoom.</strong> <br>&nbsp;
             </p>
           </div>
   
@@ -460,7 +463,7 @@
              class="triangle-main"
              alt="Summary ternary plot of mode specializations aggregated over layers." />
              <p class="subtitle has-text-centered">
-              The vertices correspond to layer-, position-, and content-dominated operators, and points along edges reflect mixed operators (e.g., content–position). Hover over the image to see the density distribution. <br>.
+              The vertices correspond to layer-, position-, and content-dominated operators, and points along edges reflect mixed operators. <strong>Hover over the image</strong> to see the density distribution.<br>&nbsp;
             </p>
         <!-- Detailed density view on hover -->
         <img src="static/images_new/mode_triangle_main_density.png"
@@ -478,6 +481,9 @@
         <img src="static/images_new/mode_triangle_full_density.png"
              class="zoom-pan-image"
              alt="Per-layer ternary plots of mode specializations for ViT and DINOv2." />
+             <span style="opacity: 0.45; font-size: 0.85em;">
+              <i class="fas fa-search-plus"></i> Hover to zoom
+            </span>
       </div>
 
     </div>
@@ -518,6 +524,9 @@
                class="zoom-pan-image"
                style="max-width:100%; height:auto;"
                alt="3D positional manifolds across layers for ViT and DINOv2." />
+               <span style="opacity: 0.45; font-size: 0.85em;">
+                <i class="fas fa-search-plus"></i> Hover to zoom
+              </span>
         </div>
 
         
