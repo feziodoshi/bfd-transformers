@@ -355,7 +355,7 @@
         <h2 class="title is-3">Representative interaction motifs</h2>
 
         <p>
-          The query (red) and key (cyan) singular vectors are projected onto either the 
+          The <span style="color: red;">query (red)</span> and <span style="color: blue;">key (cyan)</span> singular vectors (paired modes) are projected onto either the 
           <em>content</em> or <em>positional</em> factor, highlighting the image regions that most 
           strongly activate each singular direction. Content–content interactions reveal object 
           parts, while position–position interactions reveal spatial tracking.
@@ -366,10 +366,113 @@
                class="zoom-pan-image"
                style="max-width:100%; height:auto;"
                alt="Projections of query/key singular vectors onto content or positional factors." />
-               <span style="opacity: 0.45; font-size: 0.85em;">
+              <span style="opacity: 0.45; font-size: 0.85em;">
                 <i class="fas fa-search-plus"></i> Hover to zoom
               </span>
+              <p class="subtitle has-text-centered">
+                <em>Content and Position Interaction Motifs in DINOv2.</em>
+              </p>
         </div>
+
+        <br>
+        <p><strong>Content-Content interaction motifs within modes of DINOv2 block 11 and 12.</strong></p>
+        <div class="columns is-vcentered is-mobile">
+          <div class="column">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/qualitative/content_content_blockidx_10_overlays.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+                   <span style="opacity: 0.45; font-size: 0.85em;">
+                    <i class="fas fa-search-plus"></i> Hover to zoom
+                  </span>
+                  <p class="subtitle has-text-centered" style="font-size: 1.0em;">
+                    Block 11
+                  </p>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/qualitative/content_content_blockidx_11_overlays.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+                   <span style="opacity: 0.45; font-size: 0.85em;">
+                    <i class="fas fa-search-plus"></i> Hover to zoom
+                  </span>
+                  <p class="subtitle has-text-centered" style="font-size: 1.0em;">
+                    Block 12
+                  </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <br>
+        <p><strong>Position-Position interaction motifs within modes of DINOv2 block 2 and 10.</strong></p>
+        <div class="columns is-vcentered is-mobile">
+          <div class="column">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/qualitative/pos_pos_blockidx_1_overlays.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+                   <span style="opacity: 0.45; font-size: 0.85em;">
+                    <i class="fas fa-search-plus"></i> Hover to zoom
+                  </span>
+                  <p class="subtitle has-text-centered" style="font-size: 1.0em;">
+                    Block 2
+                  </p>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/qualitative/pos_pos_blockidx_9_overlays.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+                   <span style="opacity: 0.45; font-size: 0.85em;">
+                    <i class="fas fa-search-plus"></i> Hover to zoom
+                  </span>
+                  <p class="subtitle has-text-centered" style="font-size: 1.0em;">
+                    Block 10
+                  </p>
+            </div>
+          </div>
+        </div>
+
+
+        <br>
+        <p><strong>Content-Position interaction motifs within modes of DINOv2 block 7 and 11.</strong></p>
+        <div class="columns is-vcentered is-mobile">
+          <div class="column">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/qualitative/pos_content_blockidx_6_overlays.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+                   <span style="opacity: 0.45; font-size: 0.85em;">
+                    <i class="fas fa-search-plus"></i> Hover to zoom
+                  </span>
+                  <p class="subtitle has-text-centered" style="font-size: 1.0em;">
+                    Block 7
+                  </p>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="zoom-pan-container">
+              <img src="static/images_new/qualitative/pos_content_blockidx_10_overlays.png"
+                   class="carousel-image zoom-pan-image"
+                   alt="..." />
+                   <span style="opacity: 0.45; font-size: 0.85em;">
+                    <i class="fas fa-search-plus"></i> Hover to zoom
+                  </span>
+                  <p class="subtitle has-text-centered" style="font-size: 1.0em;">
+                    Block 11
+                  </p>
+            </div>
+          </div>
+        </div>
+
 
       </div>
     </div>
