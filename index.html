@@ -576,6 +576,16 @@
 
         <h2 class="title is-3">Interactions within different blocks of DINOv2</h2>
 
+        <p>
+          Each row visualizes a specific interaction mode of a DINOv2 attention head.
+          For a given block and interaction-pair (content–content, position–position, or content–position), we project token activations onto the left/right singular directions of the head’s query–key interaction matrix.
+          Modes are then ranked by how strongly they are expressed across thousands of images, using a co-activation score (product of top-k pooled query- and key-side token projections).
+          We visualize a subset of the highest-scoring modes, and for each selected mode, display the images that most strongly express that interaction.
+          Overlays show the query projection in red and the key projection in cyan.
+        </p>
+        <br>
+
+
         <p><em><span style="color: red;">Content (query)</span>-<span style="color: blue;">Content (key)</span> interaction motifs within modes of DINOv2 block <strong>11</strong> and <strong>12</strong>.</em></p>
         <div class="columns is-vcentered is-multiline">
           <div class="column is-half-tablet is-full-mobile">
