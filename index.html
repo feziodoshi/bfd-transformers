@@ -622,19 +622,20 @@
     <div class="container is-max-desktop content">
       <div class="item">
 
-        <h2 class="title is-3">Visualizing Interactions Within Attention Heads</h2>
+        <h2 class="title is-3">Visualizing interactions within attention heads</h2>
 
         <p>
           Each row visualizes a specific interaction mode of a DINOv2 attention head and each column shows an image's <span style="color:red;">query projection</span> in red and the
-          <span style="color:blue;">key projection</span> in cyan. <br>
+          <span style="color:blue;">key projection</span> in cyan. Visualized modes are selected based on how strongly they are expressed across thousands of images using 
+          a co-activation score (product of top-k pooled query- and key-side token projections).
         </p>
           
-        <p>
+        <!-- <p>
           For a given block and interaction type:<br>
           a. Token activations are projected onto the left and right singular directions of the head’s query–key interaction matrix.<br>
           b. Modes are ranked by how strongly they are expressed across thousands of images using a co-activation score (product of top-k pooled query- and key-side token projections).<br>
           c. For the highest-scoring modes, projections for images (each column) that most strongly express the interaction are displayed.
-        </p>
+        </p> -->
 
         <br>
 
