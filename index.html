@@ -56,6 +56,19 @@
 
 
 
+<!-- <style>
+  .zoom-pan-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zoom-pan-image {
+    transition: transform 0.25s ease-out;
+    transform-origin: center center;
+    will-change: transform;
+  }
+</style> -->
+
 <style>
   .zoom-pan-container {
     position: relative;
@@ -66,6 +79,14 @@
     transition: transform 0.25s ease-out;
     transform-origin: center center;
     will-change: transform;
+  }
+
+  /* Desktop-only magnifying-glass cursor */
+  @media (hover: hover) and (pointer: fine) {
+    .zoom-pan-container,
+    .zoom-pan-container .zoom-pan-image {
+      cursor: zoom-in;
+    }
   }
 </style>
 
