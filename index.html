@@ -418,8 +418,9 @@
     <div class="container is-max-desktop content">
       <div class="item">
 
-        <h2 class="title is-3">Attention budget is allocated more towards content-driven interactions</h2>
+        <h2 class="title is-3">Organization of information flow in self-attention</h2>
 
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Attention budget is allocated more towards content-driven interactions</h3>
         <p>
           BFD decomposes each layer’s attention into factor pairs and shows that most attention
           energy flows through <em>content–content</em> and <em>content–position</em> interactions,
@@ -427,21 +428,19 @@
           coupling than the supervised ViT, indicating stronger localization-aware semantic
           integration.
         </p>
-
         <div style="text-align: center; margin-top: 1.5rem;">
           <img src="static/images_new/sedimentation_plot_bg.png"
                width="80%" height="auto"
                alt="Layer-wise stacked attention energy for different interaction types in ViT and DINOv2, showing content-driven interactions dominating the budget." />
         </div>
 
+        <h3 class="title is-4" style="margin-top: 1.5rem;">Distributed interactions in DINOv2</h3>
         <p>
           <!-- <strong>Rich content-driven interaction motifs across the modes in DINOv2.</strong> -->
-          <br>
-          <strong>At a finer resolution, we observe that the content-driven energy in DINOv2 is distributed broadly across many modes rather than concentrated in a few dominant ones.</strong>
+          At a finer resolution, the content-driven energy in DINOv2 is distributed broadly across many modes rather than concentrated in a few dominant ones.
           In contrast, the supervised ViT not only allocates less overall energy to content-driven interactions, but also the energy is concentrated in a few dominant modes, 
           <em>indicating richer content-driven interaction motifs in DINOv2.</em>
         </p>
-  
         <!-- Motif carousel -->
         <div id="infoflow-carousel" class="carousel results-carousel" style="margin-top: 1.5rem;">
   
@@ -469,6 +468,22 @@
   
         </div>
         <!-- End motif carousel -->
+
+        <!-- Spectral structure -->
+        <h3 class="title is-4" style="margin-top: 1.5rem;">Spectral structure of interactions</h3>
+        <p>
+          DINOv2 shows a higher stable rank of the query–key interaction matrix, again indicating that attention relies on more available dimensions than the supervised ViT. 
+          Mode alignment patterns reveal that DINOv2 uses near-orthogonal asymmetric interaction types.
+        </p>
+        <div class="zoom-pan-container" style="margin-top: 1rem;">
+          <img src="static/images_new/alignment_rank_modes_of_w.png"
+               class="zoom-pan-image"
+               style="max-width:100%; height:auto;"
+               alt="Spectral Structure." />
+               <span class="is-hidden-mobile" style="opacity: 0.45; font-size: 0.85em;">
+                <i class="fas fa-search-plus"></i> Hover to zoom
+              </span>
+        </div>
 
       </div>
     </div>
@@ -607,24 +622,20 @@
     <div class="container is-max-desktop content">
       <div class="item">
 
-        <h2 class="title is-3">Information Flow Within Attention Heads</h2>
-
-        <h3 class="title is-4"
-            style="margin-top: 2.5rem; margin-bottom: 0.5rem;">
-            Interactions in Different Blocks of DINOv2
-        </h3>
+        <h2 class="title is-3">Visualizing Interactions Within Attention Heads</h2>
 
         <p>
-          Each row visualizes a specific interaction mode of a DINOv2 attention head.
-          For a given block and interaction-pair (content–content, position–position, or content–position), we project token activations onto the left/right singular directions of the head’s query–key interaction matrix.
-          Modes are then ranked by how strongly they are expressed across thousands of images, using a co-activation score (product of top-k pooled query- and key-side token projections).
-          For a subset of the highest-scoring modes, we display the images (each column) that most strongly express that interaction.
-          
-          <br>
-          <br>
-          Each image shows the <span style="color: red;">query projection</span> in red and the <span style="color: blue;">key projection</span> in cyan.
-
+          Each row visualizes a specific interaction mode of a DINOv2 attention head and each column shows an image's <span style="color:red;">query projection</span> in red and the
+          <span style="color:blue;">key projection</span> in cyan. <br>
         </p>
+          
+        <p>
+          For a given block and interaction type:<br>
+          a. Token activations are projected onto the left and right singular directions of the head’s query–key interaction matrix.<br>
+          b. Modes are ranked by how strongly they are expressed across thousands of images using a co-activation score (product of top-k pooled query- and key-side token projections).<br>
+          c. For the highest-scoring modes, projections for images (each column) that most strongly express the interaction are displayed.
+        </p>
+
         <br>
 
 
